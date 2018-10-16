@@ -1,0 +1,36 @@
+.am-tabs-default-bar-tab{
+    color: #333
+}
+.tab-active {
+    color: #e94310 !important;
+    font-weight: bold;
+    position: relative;
+
+    &:after{
+        content: '';
+        position: absolute;
+        border-bottom: 3px solid #e94310;
+        bottom: 0px;
+        right: 0;
+        left: 0;
+    }
+}
+.tabs{
+    height: 50px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 50px;
+    margin: 0 10px;
+    border-bottom: 1px solid #e94310;
+    li{
+        float: left;
+        width: 50%;
+        a{
+            display: block;
+            color: #333;
+           
+        }
+       
+    }
+    
+}

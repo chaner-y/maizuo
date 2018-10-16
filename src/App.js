@@ -1,30 +1,38 @@
 import React, { Component } from 'react';
-import './style/App.css';
 import { Drawer, List, NavBar, Icon, Card } from 'antd-mobile';
-import {HashRouter,BrowserRouter,Route,Link,NavLink} from 'react-router-dom';
+import {Route,Switch,Redirect,withRouter,NavLink} from 'react-router-dom';
 import Home from './components/home';
 import Film from './components/film';
 import Cinema from './components/cinema';
 import Shop from './components/shop';
 import Wode from './components/wode';
 import MyCard from './components/card';
-import 'antd-mobile/dist/antd-mobile.css';
+import MyCity from './components/city';
+import Detail from './components/film/detail/detail';
 
-console.log(Home)
+import './style/App.css';
+import './sass/main.scss';
 
-class App extends Component{
-  render(){
-    return <div>
-      <Nav/>
-    </div>
-  }
-}
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-class Nav extends React.Component {
-  state = {
-    open: true,
-    city:'广州',
-    menus:[{
+import { faBars , faAngleRight ,faUser} from '@fortawesome/free-solid-svg-icons'
+
+library.add(faBars,faAngleRight,faUser);
+
+class App extends React.Component {
+  constructor(props){
+    super(props);
+  
+  this.state = {
+    open: false,
+    city:'广州' || this.props.city,
+    menus:[
+      {
+        text:'test',
+        path:'/home'
+    },
+    {
       text:'首页',
       path:'/home'
     },{
@@ -42,7 +50,14 @@ class Nav extends React.Component {
     },{
       text:'卖座卡',
       path:'/card'
-    }]
+    }],
+    title:'卖座电影' || this.props.title
+  }
+}
+  goto(){
+    let {history} = this.props;
+    console.log(666);
+    history.push('/city');
   }
   onOpenChange = (...args) => {
     console.log(args);
@@ -54,17 +69,20 @@ class Nav extends React.Component {
       {this.state.menus.map((i, index) => {
         return (
           <NavLink key={index} to={i.path}><List.Item 
-          thumb="http://www.51yuansu.com/pic2/cover/00/44/65/5814b6f35f2b7_610.jpg"
-        >{i.text}</List.Item>
+          // thumb="http://www.51yuansu.com/pic2/cover/00/44/65/5814b6f35f2b7_610.jpg" 
+          onClick={this.onOpenChange}
+        >{i.text}
+        < FontAwesomeIcon className="icons" icon ="angle-right"/>
+        </List.Item>
         </NavLink>);
       })}
     </List>);
 
     return (<div >
-      <NavBar icon={<Icon type="ellipsis" />} onLeftClick={this.onOpenChange } className="box" rightContent={[
-        <span key='0'>{this.state.city}<Icon key='1' type="down" size="xxs"/></span>,
-        <Icon key='2' type="check-circle-o" />,
-      ]}>卖座电影</NavBar>
+      <NavBar icon={< FontAwesomeIcon icon ="bars"/>} onLeftClick={this.onOpenChange } style={{backgroundColor: "#282c34"}} className="box" rightContent={[
+        <span key='0' onClick={this.goto.bind(this)}>{this.state.city}<Icon key='1' type="down" size="xxs"/></span>,
+        < FontAwesomeIcon key='2' icon ="user" className="user"/>,
+      ]}>{this.state.title}</NavBar>
       <Drawer
         className="my-drawer"
         style={{ minHeight: document.documentElement.clientHeight }}
@@ -74,14 +92,24 @@ class Nav extends React.Component {
         open={this.state.open}
         onOpenChange={this.onOpenChange}
       >
-      <Route path="/home" component={Home}/>
-      <Route path="/film" component={Film}/>
-      <Route path="/cinema" component={Cinema}/>
-      <Route path="/shop" component={Shop}/>
-      <Route path="/wode" component={Wode}/>
-      <Route path="/card" component={MyCard}/>
+        <Switch>
+          <Route path="/home" component={Home}/>
+          <Route path="/film" component={Film}/>
+          <Route path="/cinema" component={Cinema}/>
+          <Route path="/shop" component={Shop}/>
+          <Route path="/wode" component={Wode}/>
+          <Route path="/card" component={MyCard}/>
+          <Route path="/city" component={MyCity}/>
+          <Route path="/detail" component={Detail}/>
+          
+          <Redirect from="/" to="/home" exact />
+        </Switch>
+       
       </Drawer>
-    </div>);
+      
+    </div>); 
   }
 }
+
+App = withRouter(App);
 export default App;

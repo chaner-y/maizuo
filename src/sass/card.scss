@@ -1,0 +1,43 @@
+div.am-tabs-tab-bar-wrap,div.am-tabs-default-bar-tab{
+    height: 50px;
+}
+div.am-tabs-default-bar-tab-active {
+    color: #ff7100;
+}
+div.am-tabs-default-bar-underline{
+    border:1px solid #ff7100;
+}
+.maizuo{
+    margin:20px;
+    .texta {
+        padding: 10px;
+        input{
+            height: 38px;
+            line-height: 38px;
+            border: 1px solid #ccc;
+            border-radius:5px;
+            background-color: #eee;
+            margin: 10px;
+            padding-left: 10px; 
+            width: 80%;
+        }
+        label{
+            color: #666;
+        }
+    }
+    .card_query_bottom {
+        width: 156px;
+        margin: 25px auto 30px;
+        border-radius: 18px;
+        background-color: #fe8233;
+        height: 36px;
+        color: #fff;
+        font-size: 14px;
+        line-height: 36px;
+        border: none;
+    }
+    .center-block {
+        display: block;
+    }    
+    
+}

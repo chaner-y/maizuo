@@ -1,0 +1,48 @@
+.detail{
+    img{
+        width: 100%;
+    }
+    .contain{
+        text-align: left;
+        padding:0 20px;
+        color: #666;
+        font-size: 12px;
+        h3{
+           height: 38px;
+           line-height: 38px;
+           font-size: 14px;
+        }
+        h6{
+            height: 30px;
+            line-height: 30px;
+            span{
+                margin: 0 5px;
+            }
+        }
+        .actors{
+            height: 60px;
+        }
+        p{
+            word-break:normal;
+            white-space:pre-warp;
+            word-wrapL:break-word;
+            line-height: 24px;
+
+        }
+        
+    }
+    .cpn-primary-button {
+        font-size: 14px;
+        min-width: 156px;
+        height: 36px;
+        line-height: 36px;
+        border: none;
+        background-color: #fe8233;
+        padding: 0;
+        margin: 0;
+        border-radius: 18px;
+        color: #fff;
+        -webkit-transition: 0.5s ease;
+        margin-top: 20px;
+    }
+}

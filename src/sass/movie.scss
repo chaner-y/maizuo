@@ -1,0 +1,60 @@
+body{
+    background-color: #fff !important;
+}
+div.am-list-body::before{
+    height: 0 !important;
+}
+.flim-item{
+    margin: 10px;
+    overflow: hidden;
+    padding:15px 5px; 
+    // border-bottom: 1px dashed #ccc;
+    .fl{
+        float: left;
+        display: flex;
+        width: 90%;
+        text-align: left;
+        .imgs{
+            flex: 1;
+            padding: 0 10px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .content{
+            padding-left: 10px;
+            flex: 2;
+            h4{
+                font-weight: bold;
+               height: 38px;
+               line-height: 38px;
+               color: #333;
+            }
+            p{
+                height: 28px;
+                line-height: 28px;
+                font-size: 10px;
+                .count{
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+    .fr{
+        width: 10%;
+        p{
+            font-size: 16px;
+            font-weight: bold;
+            color: #e94310;
+            span{
+                font-size: 16px;
+                font-weight: normal;
+                color: #999;
+            }
+        }
+    }
+}
+.flim-item:last-child{
+    border-bottom: none;
+}

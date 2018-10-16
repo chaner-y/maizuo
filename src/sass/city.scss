@@ -1,0 +1,47 @@
+.am-drawer-content{
+    background-color: #eee;
+}
+.city{
+    // height: 100%;
+    .gprs-city{
+        text-align: left;
+        .city-index-title{
+            color: #666;
+            padding-left: 20px;
+            height: 40px;
+            line-height: 40px;
+        }
+        .city-index-detail{
+            background-color: #fff;
+            .currCity{
+                height: 47px;
+                line-height: 47px;
+                padding: 0 20px;
+                color: #e2941a;
+            }
+            .list-unstyled{
+               display: flex;
+               justify-content: space-around;
+               flex-wrap: wrap;
+                .city-item-detail{
+                    flex: 1;
+                    span,a,p{
+                       display: block;
+                       height: 47px;
+                       line-height: 47px;
+                       text-align: center;
+                       color: #333;
+                    }
+                    .zimu{
+                        width: 90px;
+                        border-bottom: 1px solid #eee;
+                        margin: 0;
+                        overflow: hidden;
+                        text-overflow:ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+.me{
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    .toubu{
+        background-color: rgb(58, 55, 55);
+        overflow: hidden;
+        padding: 36px;
+        .avatar{
+            width: 92px;
+            height: 92px;
+            border-radius: 50%;
+            margin-right: 14px;
+            float: left;
+        }
+        .info{
+            float: left;
+            text-align: left;
+            margin-top: 5px;
+            color: #eee;
+            h3{
+            height: 32px;
+            line-height: 32px;
+            }
+            p{
+            height: 28px;
+            line-height: 28px;
+            }
+            a{
+            display: block;
+            height: 24px;
+            line-height: 24px;
+            color:#ffbd80;
+            }
+        }
+    }
+    .setting{
+        flex: 1;
+        background-color: #ebebeb;
+        div.am-list-item{
+            background-color: #fff;  
+            height: 55px; 
+        }
+        .my-list{
+            margin: 10px 0;
+            .am-list-content{
+                color: #666;
+                font-size: 12px;
+                .icons1{
+                    float: left;
+                    margin: 5px 5px 0 0;
+                    color: #ff0;
+                }
+                .order{
+                    float: left;
+                }
+                .count{
+                    float: right;
+                    .secai{
+                        margin: 5px;
+                        color: #f00;
+                    }
+                }
+            }
+        }
+    }
+}
